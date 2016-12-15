@@ -29,6 +29,7 @@
 
 -(void)changeTextColorAtIndex:(NSInteger)index rate:(CGFloat)rate;
 
+-(void)finishAtIndex:(NSInteger)index;
 
 @end
 
@@ -39,6 +40,7 @@
 @property(nonatomic,strong)SLSegmentedMenuView * menuView;
 
 -(void)scrollToViewAtIndex:(NSInteger)index;
+
 
 
 @end

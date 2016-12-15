@@ -92,7 +92,11 @@ static  CGFloat const deltaScale = 0.15;
     [self _changeCurrentButtonAtIndex:index rate:rate];
 }
 
-
+-(void)finishAtIndex:(NSInteger)index{
+    self.lastSelectedBtn = self.buttonArr[index];
+    [self setSelectedButtonToCenter:self.lastSelectedBtn];
+    
+}
 
 #pragma -mark  ----------私有方法------------
 
@@ -197,21 +201,30 @@ static  CGFloat const deltaScale = 0.15;
 -(void)setSelectedButtonToCenter:(UIButton*)button{
     CGSize contentSize = self.contentSize;
     CGPoint contentOffSet = self.contentOffset;
-    CGFloat buttonCenterX = button.center.x;
+    CGPoint buttonCenter = button.center;
+    CGPoint convertCenter = [self convertPoint:buttonCenter toView:self.superview];
+    CGFloat buttonCenterX = convertCenter.x;
     CGFloat selfCenterX = self.center.x;
     if (buttonCenterX == selfCenterX) {
         return;
     }
+    
     CGFloat deltaX = buttonCenterX - selfCenterX;
-    
-    if ((contentOffSet.x+self.frame.size.width)>deltaX) {
-        return;
+    //判断右边界
+    if (deltaX>0) {
+        if (deltaX > (contentSize.width-(contentOffSet.x+self.frame.size.width))) {
+            deltaX = contentSize.width-(contentOffSet.x+self.frame.size.width);
+        }
     }
-    
-    
-    [self setContentOffset:CGPointMake(contentOffSet.x+deltaX, 0) animated:YES];
-    
-    
+    //判断左边界
+    else{
+        if ((contentOffSet.x + deltaX) < 0) {
+            deltaX = -contentOffSet.x;
+        }
+    }
+    //判断是否会出界
+    CGFloat destinationContentOffSetX = contentOffSet.x+deltaX;
+    [self setContentOffset:CGPointMake(destinationContentOffSetX, 0) animated:YES];
 }
 
 
@@ -357,10 +370,17 @@ static  CGFloat const deltaScale = 0.15;
     CGFloat rate =  remainder /self.frame.size.width;
     
     [self _changeTextColorAndFrameAtIndex:index rate:rate];
-
 }
 
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
 
+    if (self.isClickMenuBtn) {
+        return;
+    }
+    CGPoint  point = scrollView.contentOffset;
+    NSInteger index = point.x/(self.frame.size.width);
+    [self.menuView finishAtIndex:index];
+}
 
 #pragma -mark  ----------getterAndSetter------------
 -(void)setItems:(NSArray<SLSegmentedItem *> *)items{
