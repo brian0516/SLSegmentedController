@@ -101,12 +101,12 @@ static  CGFloat const deltaScale = 0.15;
 #pragma -mark  ----------私有方法------------
 
 -(void)_configDefault{
-    self.backgroundColor = [UIColor greenColor];
+    self.backgroundColor = [UIColor whiteColor];
     self.showsVerticalScrollIndicator = NO;
     self.showsHorizontalScrollIndicator = NO;
     self.height = menuViewHeightDefault;
     self.normalColor = [UIColor darkGrayColor];
-    self.hightlightedColor = [UIColor whiteColor];
+    self.hightlightedColor = [UIColor redColor];
 }
 
 -(void)_initSubViews{
@@ -126,7 +126,7 @@ static  CGFloat const deltaScale = 0.15;
     [btn setTitle:item.title forState:UIControlStateNormal];
     [btn setTitleColor:_normalColor forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-    btn.backgroundColor = [UIColor redColor];
+    btn.backgroundColor = [UIColor whiteColor];
     return btn;
 }
 
@@ -320,7 +320,7 @@ static  CGFloat const deltaScale = 0.15;
 
 #pragma -mark  ----------私有方法------------
 -(void)_configDefault{
-    self.backgroundColor = [UIColor yellowColor];
+    self.backgroundColor = [UIColor whiteColor];
     self.showsVerticalScrollIndicator = NO;
     self.showsHorizontalScrollIndicator = NO;
     self.pagingEnabled = YES;
@@ -441,11 +441,9 @@ static  CGFloat const deltaScale = 0.15;
 #pragma -mark ------------------私有方法--------------------------
 
 -(void)_configDefault{
-    self.backgroundColor = [UIColor lightGrayColor];
+    self.backgroundColor = [UIColor whiteColor];
 
 }
-
-
 
 #pragma -mark ------------------getterAndSetter--------------------------
 

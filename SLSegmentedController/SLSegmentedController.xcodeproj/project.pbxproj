@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		010D6D951E021CFE0024B0CA /* SLSegmentedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D6D941E021CFE0024B0CA /* SLSegmentedController.m */; };
 		010D6D981E022AFB0024B0CA /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D6D971E022AFB0024B0CA /* SecondViewController.m */; };
-		010D6D9B1E022B070024B0CA /* thirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D6D9A1E022B070024B0CA /* thirdViewController.m */; };
+		010D6D9B1E022B070024B0CA /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D6D9A1E022B070024B0CA /* ThirdViewController.m */; };
 		010D6D9E1E022B1E0024B0CA /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D6D9D1E022B1E0024B0CA /* FourthViewController.m */; };
+		010D6DA11E02B28E0024B0CA /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D6DA01E02B28E0024B0CA /* BaseViewController.m */; };
+		010D6DA41E02B3310024B0CA /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010D6DA31E02B3310024B0CA /* FirstViewController.m */; };
 		018D6D7C1E016C6E00234375 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 018D6D7B1E016C6E00234375 /* main.m */; };
 		018D6D7F1E016C6E00234375 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 018D6D7E1E016C6E00234375 /* AppDelegate.m */; };
 		018D6D821E016C6E00234375 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 018D6D811E016C6E00234375 /* ViewController.m */; };
@@ -43,10 +45,14 @@
 		010D6D941E021CFE0024B0CA /* SLSegmentedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLSegmentedController.m; sourceTree = "<group>"; };
 		010D6D961E022AFB0024B0CA /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		010D6D971E022AFB0024B0CA /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		010D6D991E022B070024B0CA /* thirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thirdViewController.h; sourceTree = "<group>"; };
-		010D6D9A1E022B070024B0CA /* thirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = thirdViewController.m; sourceTree = "<group>"; };
+		010D6D991E022B070024B0CA /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		010D6D9A1E022B070024B0CA /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		010D6D9C1E022B1E0024B0CA /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
 		010D6D9D1E022B1E0024B0CA /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
+		010D6D9F1E02B28E0024B0CA /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		010D6DA01E02B28E0024B0CA /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		010D6DA21E02B3310024B0CA /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		010D6DA31E02B3310024B0CA /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		018D6D771E016C6E00234375 /* SLSegmentedController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLSegmentedController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		018D6D7B1E016C6E00234375 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		018D6D7D1E016C6E00234375 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -125,12 +131,16 @@
 				010D6D921E021C680024B0CA /* SLSegController */,
 				018D6D7D1E016C6E00234375 /* AppDelegate.h */,
 				018D6D7E1E016C6E00234375 /* AppDelegate.m */,
+				010D6D9F1E02B28E0024B0CA /* BaseViewController.h */,
+				010D6DA01E02B28E0024B0CA /* BaseViewController.m */,
 				018D6D801E016C6E00234375 /* ViewController.h */,
 				018D6D811E016C6E00234375 /* ViewController.m */,
+				010D6DA21E02B3310024B0CA /* FirstViewController.h */,
+				010D6DA31E02B3310024B0CA /* FirstViewController.m */,
 				010D6D961E022AFB0024B0CA /* SecondViewController.h */,
 				010D6D971E022AFB0024B0CA /* SecondViewController.m */,
-				010D6D991E022B070024B0CA /* thirdViewController.h */,
-				010D6D9A1E022B070024B0CA /* thirdViewController.m */,
+				010D6D991E022B070024B0CA /* ThirdViewController.h */,
+				010D6D9A1E022B070024B0CA /* ThirdViewController.m */,
 				010D6D9C1E022B1E0024B0CA /* FourthViewController.h */,
 				010D6D9D1E022B1E0024B0CA /* FourthViewController.m */,
 				018D6D831E016C6E00234375 /* Main.storyboard */,
@@ -302,8 +312,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				010D6D981E022AFB0024B0CA /* SecondViewController.m in Sources */,
+				010D6DA41E02B3310024B0CA /* FirstViewController.m in Sources */,
+				010D6DA11E02B28E0024B0CA /* BaseViewController.m in Sources */,
 				018D6D821E016C6E00234375 /* ViewController.m in Sources */,
-				010D6D9B1E022B070024B0CA /* thirdViewController.m in Sources */,
+				010D6D9B1E022B070024B0CA /* ThirdViewController.m in Sources */,
 				010D6D951E021CFE0024B0CA /* SLSegmentedController.m in Sources */,
 				018D6D7F1E016C6E00234375 /* AppDelegate.m in Sources */,
 				010D6D9E1E022B1E0024B0CA /* FourthViewController.m in Sources */,

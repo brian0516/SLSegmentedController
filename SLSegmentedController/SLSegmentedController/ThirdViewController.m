@@ -6,13 +6,13 @@
 //  Copyright © 2016年 shuanglong. All rights reserved.
 //
 
-#import "thirdViewController.h"
+#import "ThirdViewController.h"
 
-@interface thirdViewController ()
+@interface ThirdViewController ()
 
 @end
 
-@implementation thirdViewController
+@implementation ThirdViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

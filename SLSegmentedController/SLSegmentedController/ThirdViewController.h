@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  thirdViewController.h
 //  SLSegmentedController
 //
 //  Created by shuanglong on 16/12/15.
@@ -8,6 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface SecondViewController : BaseViewController
+@interface ThirdViewController : BaseViewController
 
 @end

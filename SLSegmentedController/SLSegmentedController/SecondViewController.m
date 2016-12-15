@@ -19,28 +19,7 @@
     
     self.view.backgroundColor = [UIColor blueColor];
     
-    UIButton * btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
-    btn.backgroundColor = [UIColor redColor];
-    [btn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
-    
-    
 }
-
-
--(void)click:(UIButton *)button{
-    
-    UIButton * btn = button;
-    if (btn.selected) {
-        btn.transform = CGAffineTransformIdentity;
-    }
-    else{
-        btn.transform = CGAffineTransformMakeScale(1.5, 1.5);
-    }
-    btn.selected = !btn.selected;
-    
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
