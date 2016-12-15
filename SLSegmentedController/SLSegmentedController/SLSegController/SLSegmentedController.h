@@ -50,9 +50,6 @@
 
 @interface SLSegmentedController : UIView
 
-
-//@property(nonatomic,strong)NSArray <UIViewController*> * viewControllers;
-//@property(nonatomic,assign)NSInteger  segHeight;
 @property(nonatomic,strong)NSArray <SLSegmentedItem*> * items;
 
 -(instancetype)initWithItems:(NSArray <SLSegmentedItem*> * )items;
