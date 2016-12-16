@@ -40,10 +40,15 @@
     }
     
     SLSegmentedController * seg = [[SLSegmentedController alloc]initWithItems:(NSArray*)items];
+  
+    seg.hightlightedColor = [UIColor orangeColor];
+    seg.normalColor = [UIColor greenColor];
+    seg.menuHeight = 30;
+    seg.fontSize = 20;
     seg.frame = CGRectMake(0, 20, self.view.frame.size.width, 600);
+    
     [self.view addSubview:seg];
 
-    
 }
 
 

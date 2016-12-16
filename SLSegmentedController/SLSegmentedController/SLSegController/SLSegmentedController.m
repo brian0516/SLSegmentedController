@@ -9,8 +9,8 @@
 #import "SLSegmentedController.h"
 
 static  NSInteger const menuViewHeightDefault = 44;
-static  CGFloat const deltaScale = 0.15;
-
+static  CGFloat const deltaScale = 0.15f;
+static  CGFloat const fontSizeDefault = 15.0f;
 //=============================================================================
 #pragma -mark =======================SLSegmentedItem======================
 @interface SLSegmentedItem ()
@@ -107,6 +107,7 @@ static  CGFloat const deltaScale = 0.15;
     self.height = menuViewHeightDefault;
     self.normalColor = [UIColor darkGrayColor];
     self.hightlightedColor = [UIColor redColor];
+    self.fontSize = fontSizeDefault;
 }
 
 -(void)_initSubViews{
@@ -127,6 +128,7 @@ static  CGFloat const deltaScale = 0.15;
     [btn setTitleColor:_normalColor forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     btn.backgroundColor = [UIColor whiteColor];
+    btn.titleLabel.font = [UIFont systemFontOfSize:self.fontSize];
     return btn;
 }
 
@@ -274,6 +276,56 @@ static  CGFloat const deltaScale = 0.15;
         _buttonArr = [NSMutableArray array];
     }
     return _buttonArr;
+}
+
+
+-(void)setNormalColor:(UIColor *)normalColor{
+    if (!normalColor) {
+        _normalColor = [UIColor darkGrayColor];
+    }
+    else{
+        _normalColor = normalColor;
+    }
+    if (self.buttonArr.count>0) {
+        for (NSInteger i = 1; i<self.buttonArr.count-1; i++) {
+            UIButton * btn = self.buttonArr[i];
+            [btn setTitleColor:_normalColor forState:UIControlStateNormal];
+        }
+    }
+}
+
+-(void)setHightlightedColor:(UIColor *)hightlightedColor{
+    if (!hightlightedColor) {
+        _hightlightedColor = [UIColor redColor];
+    }
+    else{
+        _hightlightedColor = hightlightedColor;
+    }
+    
+    if (self.buttonArr.count>0) {
+        UIButton * btn = [self.buttonArr firstObject];
+        [btn setTitleColor:_hightlightedColor forState:UIControlStateNormal];
+    }
+}
+
+-(void)setHeight:(NSInteger)height{
+    _height = height;
+    self.hasSetBtnFrame = NO;
+}
+
+-(void)setFontSize:(CGFloat)fontSize{
+    _fontSize = fontSize;
+    if (self.buttonArr.count>0) {
+        UIButton * btn = [self.buttonArr firstObject];
+        btn.transform = CGAffineTransformIdentity;
+        
+        for (NSInteger i = 0; i<self.buttonArr.count; i++) {
+            UIButton * btn = self.buttonArr[i];
+            btn.titleLabel.font = [UIFont systemFontOfSize:_fontSize];
+        }
+    }
+    self.hasSetBtnFrame = NO;
+    [self layoutIfNeeded];
 }
 
 
@@ -432,8 +484,8 @@ static  CGFloat const deltaScale = 0.15;
 #pragma -mark ------------------重写父类方法--------------------------
 -(void)layoutSubviews{
     [super layoutSubviews];
-    self.menuView.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame),44);
-    self.controllersView.frame = CGRectMake(0, 44, CGRectGetWidth(self.frame), self.bounds.size.height-44);
+    self.menuView.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame),self.menuHeight);
+    self.controllersView.frame = CGRectMake(0, self.menuHeight, CGRectGetWidth(self.frame), self.bounds.size.height-self.menuHeight);
 }
 
 
@@ -443,6 +495,7 @@ static  CGFloat const deltaScale = 0.15;
 
 -(void)_configDefault{
     self.backgroundColor = [UIColor whiteColor];
+    _menuHeight = 44;
 
 }
 
@@ -476,6 +529,44 @@ static  CGFloat const deltaScale = 0.15;
     }
     return _controllersView;
 }
+
+
+-(void)setNormalColor:(UIColor *)normalColor{
+    if (!normalColor) {
+        _normalColor = [UIColor darkGrayColor];
+    }
+    else{
+        _normalColor = normalColor;
+    }
+    self.menuView.normalColor = _normalColor;
+}
+
+-(void)setHightlightedColor:(UIColor *)hightlightedColor{
+    if (!hightlightedColor) {
+        _hightlightedColor = [UIColor redColor];
+    }
+    else{
+        _hightlightedColor = hightlightedColor;
+    }
+    self.menuView.hightlightedColor = _hightlightedColor;
+}
+
+-(void)setMenuHeight:(CGFloat)menuHeight{
+    if (menuHeight<=0) {
+        _menuHeight = 44;
+    }
+    else{
+        _menuHeight = menuHeight;
+    }
+    self.menuView.height = _menuHeight;
+    [self layoutIfNeeded];
+}
+
+-(void)setFontSize:(CGFloat)fontSize{
+    _fontSize = fontSize;
+ self.menuView.fontSize = _fontSize;
+}
+
 
 
 @end

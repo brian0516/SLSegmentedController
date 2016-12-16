@@ -15,6 +15,7 @@
 
 @implementation BaseViewController
 
+
 -(instancetype)initWithString:(NSString *)string{
     if (self = [super init]) {
         _string = string;
