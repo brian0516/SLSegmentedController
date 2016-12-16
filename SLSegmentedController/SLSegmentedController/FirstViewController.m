@@ -22,13 +22,22 @@
     [super viewDidLoad];
     
     self.tableView = [[UITableView alloc]init];
-    self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width,600-30);
+ 
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.rowHeight = 44;
     [self.view addSubview:self.tableView];
     
 }
+
+
+-(void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
+
+    self.tableView.frame = self.view.bounds;
+
+}
+
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
